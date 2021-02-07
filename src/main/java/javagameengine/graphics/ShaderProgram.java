@@ -9,7 +9,10 @@ import java.nio.FloatBuffer;
 import static org.lwjgl.opengl.GL20.*;
 
 public class ShaderProgram {
-    private static final String MAT4_NAME = Matrix4f.class.getName();
+    public static final String VAR_PROJECTION_MATRIX = "projection_matrix";
+    public static final String VAR_VIEW_MATRIX = "view_matrix";
+    public static final String VAR_TIME = "time";
+    public static final String VAR_TEXTURE_SAMPLER = "TEX_SAMPLER";
 
     private Shader vertex, fragment;
     private int id = -1;
