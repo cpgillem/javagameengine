@@ -20,9 +20,11 @@ public class Application {
     private float endTime = 0;
     private float delta = 0;
 
-    public Application(Window window, State state) {
-        this.window = window;
-        this.state = state;
+    public Application() {
+        this.window = new Window(this);
+        this.state = new State(this) {
+            // Empty state that does nothing.
+        };
     }
 
     public void run() {
@@ -49,6 +51,7 @@ public class Application {
     }
 
     public void update() {
+        window.update();
         state.update();
 
         // Calculate delta and set new begin time for next update
